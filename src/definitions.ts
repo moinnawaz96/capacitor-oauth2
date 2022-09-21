@@ -36,6 +36,17 @@ export interface OAuth2RefreshTokenOptions {
      * A space-delimited list of permissions that identify the resources that your application could access on the user's behalf.
      */
     scope?: string;
+    /**
+     * Client Secret 
+     */
+    clientSecret?: string;
+    /**
+     * additional Resource Headers 
+     */
+    additionalResourceHeaders?:{
+        [key:string]:string;
+    }
+
 }
 
 export interface OAuth2AuthenticateBaseOptions {
@@ -105,6 +116,11 @@ export interface OAuth2AuthenticateBaseOptions {
      * @since 3.0.0
      */
     additionalResourceHeaders?: { [key: string]: string }
+
+    /**
+     * Client Secret
+     */
+    clientSecret?:string;
 }
 
 export interface OAuth2AuthenticateOptions extends OAuth2AuthenticateBaseOptions {
